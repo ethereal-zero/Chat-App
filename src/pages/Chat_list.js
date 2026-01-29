@@ -1,9 +1,5 @@
 import React, { useRef, useState, useEffect} from 'react'
-<<<<<<< Updated upstream
-import { db,auth } from '../config/firebasee'
-=======
 import { db,auth } from '../config/firebase'
->>>>>>> Stashed changes
 import {collection, onSnapshot, orderBy, query} from 'firebase/firestore'
 
 
