@@ -32,7 +32,7 @@ function MainStream() {
           }).then(()=>{
             console.log(added)
             if (added == 0) {
-              const { uid, photoURL, email, displayName } = auth.currentUser
+              const { uid, photoURL, email, displayName } = auth.currentUser??[]
                addDoc(collection(db, 'users'), {
                Name: displayName,
                uid,

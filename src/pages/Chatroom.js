@@ -13,7 +13,7 @@ function Chatroom({usertarget}) {
   }}); 
   const [messages, setMessages] = useState([]);
   useEffect(()=>{
-    const { uid } = auth.currentUser
+    const { uid } = auth.currentUser??[]
     const que = query(collection(db,"messages"),where("Convo_Id", "in", [uid+usertarget.Target_uid, usertarget.Target_uid+uid]),orderBy("created"));
     const Unsubscribe = onSnapshot(que, (querySnapshot)=>{
       let messages = []
@@ -43,7 +43,7 @@ function Chatroom({usertarget}) {
     setMessages(updatedMessages);
     
     if(messages.length == 0){
-      const { uid, photoURL,displayName } = auth.currentUser
+      const { uid, photoURL,displayName } = auth.currentUser??[]
       await addDoc(collection(db, 'messages'), {
        Convo_Id: uid+usertarget.Target_uid,
        Text: TxtMessage,
@@ -62,7 +62,7 @@ function Chatroom({usertarget}) {
     return;
     }
     if(messages.length != 0){
-    const { uid, photoURL,displayName } = auth.currentUser
+    const { uid, photoURL,displayName } = auth.currentUser??[]
     await addDoc(collection(db, 'messages'), {
      Convo_Id: messages[0].Convo_Id,
      Text: TxtMessage,

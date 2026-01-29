@@ -4,7 +4,7 @@ import {collection, onSnapshot, orderBy, query,where} from 'firebase/firestore'
 
 
 function Users({setUserTarget,setMenu}) {
-  const { uid } = auth.currentUser
+  const { uid } = auth.currentUser??[]
     const [Accounts, setAccounts] = useState([]);
     const filteredAccounts = Accounts.filter(account => account.uid != uid);
     useEffect(()=>{

@@ -28,7 +28,7 @@ function Interface(settext) {
     return String(message).length > 15 ? message.slice(0,15) + " . . . " : message;
   }
   async function LeaveGroup(){
-    const { uid } = auth.currentUser
+    const { uid } = auth.currentUser??[]
     const collectionRef = collection(db, "groups");
     const queryRef = query(collectionRef,where('Group_ID', '==', grouptarget.Group_ID),where('uid', '==', uid));
     const querySnapshot = await getDocs(queryRef);

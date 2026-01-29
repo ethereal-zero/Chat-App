@@ -33,7 +33,7 @@ function Grouproom({grouptarget}) {
       alert('Please Enter Message in the Text Field')
       return;
     }
-    const { uid, photoURL,displayName } = auth.currentUser
+    const { uid, photoURL,displayName } = auth.currentUser??[]
      await addDoc(collection(db, 'group_messages'), {
       Group_ID: grouptarget.Group_ID,
       Text: TxtMessage,

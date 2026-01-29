@@ -20,7 +20,7 @@ const usersRef = collection(db, "groups");
 async function CreateGroup() {
   const userRef = doc(usersRef); // generate new document reference with random ID
   const id = userRef.id; // get the ID of the new document
- const { uid,photoURL, displayName } = auth.currentUser
+ const { uid,photoURL, displayName } = auth.currentUser??[]
   try {
     await setDoc(userRef, {// use the ID as a field value
       Group_Name: Name,

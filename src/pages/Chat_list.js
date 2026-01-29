@@ -5,7 +5,7 @@ import {collection, onSnapshot, orderBy, query} from 'firebase/firestore'
 
 function ChatList({setUserTarget,setMenu}) {
   const [messages, setMessages] = useState([]);
-  const { uid } = auth.currentUser
+  const { uid } = auth.currentUser??[]??[]
   
   const mymessages = messages.filter(convo => convo.P1_ID == uid || convo.P2_ID == uid);
   useEffect(() => {

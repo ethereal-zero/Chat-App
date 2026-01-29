@@ -32,14 +32,14 @@ function Join({setMenu}) {
 
 async function JoinGroup() {
   console.log(myArray)
-  const { uid } = auth.currentUser
+  const { uid } = auth.currentUser??[]
   if (myArray.some(item => item.Group_ID === Code)) {
     const filteredGroup = myArray.filter(item => item.Group_ID === Code);
       if ((filteredGroup.some(item => item.uid === uid))){
         alert('User already Exist!');
       }
       else{
-        const { uid,photoURL, displayName } = auth.currentUser
+        const { uid,photoURL, displayName } = auth.currentUser??[]
         addDoc(collection(db, 'groups'), {
           Group_Name: filteredGroup[0].Group_Name,
           Name: displayName,
