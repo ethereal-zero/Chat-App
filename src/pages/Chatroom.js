@@ -159,7 +159,7 @@ function getdatetime(timestamp){
     <div className={`message ${messageClass} mt-5`} onClick={() => message.uid == auth.currentUser.uid? MessageClick(message):null}>
     {message.Text?
     <>
-      <img src={message.photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt='Failed to Load'/>
+      <user-image src={message.photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt='Failed to Load'/>
       <p>
         <n><i>{message.Name}</i></n><br/>{message.Text}<br/><t><i>{ getdatetime(message.created)}</i></t><br/>
         {message.selected ?
@@ -184,7 +184,7 @@ function getdatetime(timestamp){
     </>
     :
     <>
-<img src={message.photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt='Failed to Load'/>
+<user-image src={message.photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt='Failed to Load'/>
       <p>
         <n><i>{message.Name+" Unsent a message"}</i></n>
       </p>

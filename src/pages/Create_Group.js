@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { auth,db } from '..config/firebase'
+=======
+import { auth,db } from '../config/firebase'
+>>>>>>> Stashed changes
 import React, { useRef, useState, useEffect} from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { GoogleAuthProvider, signInWithPopup} from "firebase/auth"
